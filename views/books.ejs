@@ -1,0 +1,45 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title> Books </title>
+</head>
+<body>
+
+    <h1> Books </h1>
+    <table>
+
+        <tr>
+
+            <th> Title </th>
+            <th> Author </th>
+            <th> Actions </th>
+
+        </tr>
+        <% for (var index = 0 ; index < books.length ; index++) { %>
+            
+            <tr>
+
+                <td> <%= books[index].title %> </td>
+                <td> <%= books[index].author %> </td>
+                <td>
+
+                    <a href="/book/<%= books[index].id %>"> View </a>
+                    <a href="/update/<%= books[index].id %>"> Edit </a>
+                    <a href="/delete/<%= books[index].id %>"> Delete </a>
+
+                </td>
+
+            </tr>
+
+        <% } %>
+
+    </table>
+
+    <a href="/create"> Create New Book </a>
+
+</body>
+</html>
